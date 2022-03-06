@@ -26,5 +26,5 @@ if __name__ == "__main__":
         print('Add your message to message.txt')
     else:
         whatsapp = WhatsAppSender()
-        whatsapp.worker(numbers, message)
+        whatsapp.worker(numbers, message, timeout=7)
         print('Done. Героям слава!')

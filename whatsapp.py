@@ -37,14 +37,14 @@ class WhatsAppSender:
             input("Make sure that the device and computer are"
                   "connected to the Internet and press Enter...")
 
-    def worker(self, number_list, message):
+    def worker(self, number_list, message, timeout=3):
         self.driver.get('https://web.whatsapp.com')
         input("After authorizing on WhatsApp press Enter...")
         for number in number_list:
             if len(number) > 8:
                 print(f"{number} - Start sending")
                 self.send_message(number, message)
-                sleep(3)
+                sleep(timeout)
 
         self.driver.close()
 
